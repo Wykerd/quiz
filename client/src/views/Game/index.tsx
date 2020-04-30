@@ -20,11 +20,11 @@ const Game: React.FC = (props) => {
     }, []);
 
     function handleGameData (data: any) {
-        console.log(data);
+        
         setGameData(data);
     }
 
-    console.log(details);
+    
 
     if (error) return <div>OOF looks like there was an error! Oh well go way now... (check console if you're interested in the message LOL)</div>;
     

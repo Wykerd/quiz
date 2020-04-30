@@ -17,7 +17,7 @@ const Identify : React.FC<IdentifyProps> = ({ data, onDone }) => {
     async function handleSubmit(e : React.FormEvent<HTMLFormElement>) {
         e.stopPropagation();
         e.preventDefault();
-        console.log(info)
+        if (!nickname) return alert('Please enter your name to continue');
         try {
             onDone(await (await fetch(`http://quiz.wykerd.io/api/${data._id}/init`, {
                 method: 'POST',

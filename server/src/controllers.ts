@@ -129,7 +129,7 @@ namespace Controllers {
             // check if exists
             if (!quiz) return res.status(404).json({ error: 'Not Found', message: 'Could not find quiz with that ID' });
 
-            console.log(userid);
+            
 
             const participant = await Participant.findById(userid);
 
