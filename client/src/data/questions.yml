@@ -1,0 +1,18 @@
+# Quiz questions
+quiz:
+    - question: This is a test question
+      options:
+        - text: Oof
+        - text: Loof
+        - text: Woof
+          correct: true
+        - text: Roof
+      graphic: https://ok.xyz/img.png
+
+    - question: Another test question
+      options:
+        - text: ok
+        - text: 'no'
+        - text: 'yes'
+        - text: whot?
+          correct: true

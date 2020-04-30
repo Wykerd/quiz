@@ -1,0 +1,58 @@
+version: '3.1'
+
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    networks: 
+      - backend
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8082:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+    networks: 
+      - backend
+
+  backend:
+    build: ./server
+    restart: always
+    depends_on: 
+      - mongo
+    networks:
+      - backend
+    environment: 
+      MONGO_HOST: mongo
+      PUBLIC_URL: https://quiz.wykerd.io
+
+  frontend:
+    build: ./client
+    restart: always
+    networks: 
+      - backend
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./proxy:/etc/nginx/conf.d
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    restart: unless-stopped
+    networks: 
+      - outside
+      - backend
+
+networks: 
+  outside:
+    internal: false
+  backend:
+    internal: true

@@ -1,0 +1,70 @@
+#quiz header {
+    padding: 10vh 0;
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.4em;
+    margin: 0 10px;
+    font-family: var(--font-sans-serif);
+    font-weight: normal;
+}
+
+#quiz header section {
+    position: fixed;
+    top: 0;
+    right: 0;
+    font-size: 21px;
+    padding: 10px;
+    background-color: hsl(50, 100%, 75%);
+}
+
+#quiz main input[type=text] {
+    padding: 10px
+}
+
+#quiz {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: auto;
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box;
+    border: 30px solid hsl(50, 100%, 75%);
+}
+
+#quiz main {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+}
+
+#quiz main div#placeholder {
+    height: 100px;
+}
+
+#quiz main button {
+    margin: 10px 20px;
+    padding: 15px;
+    border: none;
+    background-color: hsl(195, 30%, 80%);
+    transition: background-color 150ms ease;
+    cursor: pointer;
+}
+
+#quiz main button:hover, #quiz main button:focus {
+    background-color: hsl(194, 57%, 63%);
+}
+
+#quiz main button.wrong {
+    background-color: hsl(0, 67%, 62%);
+}
+
+#quiz main button.right {
+    background-color: hsl(50, 100%, 75%);
+}

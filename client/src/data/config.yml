@@ -1,0 +1,6 @@
+# Configure the quiz
+randomize: true # shuffle the questions
+showCorrect: false # show the correct answer after submitting
+showProgress: true # show how far person is in quiz
+showTime: true # show time remaining for quiz
+id: oof
