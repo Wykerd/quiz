@@ -1,7 +1,7 @@
 # Quiz!
 A simple quiz app built with the MERN stack
 
-Currently under development.
+__Currently under development.__
 
 # Deployment
 This application uses a microservice architecture. It includes a client and backend service eachi with a Dockerfile to run them in containers.
